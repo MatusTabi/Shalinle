@@ -19,8 +19,8 @@ func RegisterPublicRoutes(router *gin.RouterGroup, handler *Handler) {
 
 	game.POST("/guess", func(ctx *gin.Context) {
 		var req struct {
-			GameID int `json:"gameId"`
-			StopID int `json:"stopId"`
+			GameID int32 `json:"gameId"`
+			StopID int32 `json:"stopId"`
 		}
 
 		if err := ctx.BindJSON(&req); err != nil {

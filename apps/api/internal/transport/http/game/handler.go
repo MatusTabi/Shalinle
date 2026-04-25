@@ -16,6 +16,6 @@ func (h *Handler) StartGame() (*game.Game, error) {
 	return h.service.StartGame()
 }
 
-func (h *Handler) GuessStop(gameId int, stopId int) (*game.Guess, error) {
+func (h *Handler) GuessStop(gameId int32, stopId int32) (*game.Guess, error) {
 	return h.service.GuessStop(gameId, stopId)
 }

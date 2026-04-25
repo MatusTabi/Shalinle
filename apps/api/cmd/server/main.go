@@ -10,7 +10,7 @@ import (
 
 func main() {
 	stopsRepository := stops.NewRepository()
-	gameRepository := game.NewRepository()
+	gameRepository := game.NewInMemoryRepository()
 
 	stopsService := stops.NewService(stopsRepository)
 	gameService := game.NewService(gameRepository)
