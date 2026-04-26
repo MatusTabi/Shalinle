@@ -1,7 +1,13 @@
+import { Link, Outlet } from 'react-router-dom';
+
 function App() {
     return (
         <>
-            <h1 className="text-3xl">Hi there!</h1>
+            <nav className="flex gap-4">
+                <Link to="/">Home</Link>
+            </nav>
+
+            <Outlet />
         </>
     );
 }
