@@ -28,7 +28,9 @@ func (h *Handler) GetStopByID(c *gin.Context) {
 		return
 	}
 
-	c.JSON(200, stop)
+	stopDto := mapStopToDetailDTO(stop)
+
+	c.JSON(200, stopDto)
 }
 
 func (h *Handler) GetStops(c *gin.Context) {
@@ -38,5 +40,7 @@ func (h *Handler) GetStops(c *gin.Context) {
 		return
 	}
 
-	c.JSON(200, stops)
+	stopDtos := mapStopsToDTOs(stops)
+
+	c.JSON(200, stopDtos)
 }
