@@ -7,7 +7,8 @@ type Game struct {
 }
 
 type Guess struct {
-	Correct bool  `json:"correct"`
 	GameID  int32 `json:"game_id"`
 	StopID  int32 `json:"stop_id"`
+	Correct bool  `json:"correct"`
+	IsNext  bool  `json:"is_next"`
 }
