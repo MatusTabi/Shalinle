@@ -19,7 +19,7 @@ import (
 // @host localhost:8080
 // @BasePath /
 func main() {
-	stopsRepository := stops.NewRepository()
+	stopsRepository := stops.NewInMemoryRepository()
 	gameRepository := game.NewInMemoryRepository()
 
 	stopsService := stops.NewService(stopsRepository)
