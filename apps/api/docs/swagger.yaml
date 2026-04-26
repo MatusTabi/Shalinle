@@ -24,6 +24,7 @@ paths:
       consumes:
       - application/json
       description: Get a list of all stops
+      operationId: getStops
       produces:
       - application/json
       responses:
@@ -45,6 +46,7 @@ paths:
       consumes:
       - application/json
       description: Get a stop by its ID
+      operationId: getStopByID
       parameters:
       - description: Stop ID
         in: path

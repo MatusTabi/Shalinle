@@ -28,6 +28,7 @@ const docTemplate = `{
                     "stops"
                 ],
                 "summary": "Get all stops",
+                "operationId": "getStops",
                 "responses": {
                     "200": {
                         "description": "OK",
@@ -60,6 +61,7 @@ const docTemplate = `{
                     "stops"
                 ],
                 "summary": "Get a stop by ID",
+                "operationId": "getStopByID",
                 "parameters": [
                     {
                         "type": "integer",
