@@ -19,6 +19,7 @@ func NewHandler(service stops.Service) *Handler {
 // @Summary Get a stop by ID
 // @Description Get a stop by its ID
 // @Tags stops
+// @ID getStopByID
 // @Accept json
 // @Produce json
 // @Param id path int true "Stop ID"
@@ -48,6 +49,7 @@ func (h *Handler) GetStopByID(c *gin.Context) {
 // @Summary Get all stops
 // @Description Get a list of all stops
 // @Tags stops
+// @ID getStops
 // @Accept json
 // @Produce json
 // @Success 200 {array} StopDetailResponseDTO
