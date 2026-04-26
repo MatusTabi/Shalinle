@@ -1,13 +1,13 @@
-import { StopsService } from './generated'
+import { StopsService } from './generated';
 
 class ApiClient {
     getAllStops() {
-        return StopsService.getStops()
+        return StopsService.getStops();
     }
 
     getStopById(id: number) {
-        return StopsService.getStopById(id)
+        return StopsService.getStopById(id);
     }
 }
 
-export default new ApiClient()
+export default new ApiClient();
