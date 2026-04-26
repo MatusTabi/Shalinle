@@ -2,7 +2,7 @@ package stops
 
 type Service interface {
 	GetStops() ([]*Stop, error)
-	GetStopByID(id string) (*Stop, error)
+	GetStopByID(id int32) (*Stop, error)
 }
 
 type ServiceImpl struct {
@@ -17,6 +17,6 @@ func (s *ServiceImpl) GetStops() ([]*Stop, error) {
 	return s.repo.GetStops()
 }
 
-func (s *ServiceImpl) GetStopByID(id string) (*Stop, error) {
+func (s *ServiceImpl) GetStopByID(id int32) (*Stop, error) {
 	return s.repo.GetStopByID(id)
 }

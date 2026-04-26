@@ -1,6 +1,8 @@
 package stops
 
 import (
+	"strconv"
+
 	"github.com/MatusTabi/Shalinle/apps/api/internal/stops"
 	"github.com/gin-gonic/gin"
 )
@@ -14,7 +16,13 @@ func NewHandler(service stops.Service) *Handler {
 }
 
 func (h *Handler) GetStopByID(c *gin.Context) {
-	stop, err := h.service.GetStopByID(c.Param("id"))
+	id, err := strconv.Atoi(c.Param("id"))
+	if err != nil {
+		c.JSON(400, gin.H{"error": "Invalid stop ID"})
+		return
+	}
+
+	stop, err := h.service.GetStopByID(int32(id))
 	if err != nil {
 		c.JSON(500, gin.H{"error": "Failed to retrieve stop"})
 		return

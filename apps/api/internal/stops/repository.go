@@ -4,7 +4,7 @@ type Repository interface {
 	SaveStop(stop *Stop) (*Stop, error)
 
 	GetStops() ([]*Stop, error)
-	GetStopByID(id string) (*Stop, error)
+	GetStopByID(id int32) (*Stop, error)
 }
 
 type RepositoryImpl struct {
@@ -21,10 +21,10 @@ func (r *RepositoryImpl) SaveStop(stop *Stop) (*Stop, error) {
 
 func (r *RepositoryImpl) GetStops() ([]*Stop, error) {
 	// Implement the logic to retrieve all stops from the database
-	return []*Stop{{ID: "1", Name: "Example Stop 1"}, {ID: "2", Name: "Example Stop 2"}}, nil
+	return []*Stop{{ID: 1, Name: "Example Stop 1"}, {ID: 2, Name: "Example Stop 2"}}, nil
 }
 
-func (r *RepositoryImpl) GetStopByID(id string) (*Stop, error) {
+func (r *RepositoryImpl) GetStopByID(id int32) (*Stop, error) {
 	// Implement the logic to retrieve a stop by its ID from the database
 	return &Stop{ID: id, Name: "Example Stop"}, nil
 }
