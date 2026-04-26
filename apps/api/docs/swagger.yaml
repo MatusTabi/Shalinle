@@ -1,0 +1,72 @@
+basePath: /
+definitions:
+  stops.ErrorResponse:
+    properties:
+      error:
+        type: string
+    type: object
+  stops.StopDetailResponseDTO:
+    properties:
+      id:
+        type: integer
+      name:
+        type: string
+    type: object
+host: localhost:8080
+info:
+  contact: {}
+  description: This is the API for Shalinle application.
+  title: Shalinle API
+  version: "1.0"
+paths:
+  /api/stops:
+    get:
+      consumes:
+      - application/json
+      description: Get a list of all stops
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            items:
+              $ref: '#/definitions/stops.StopDetailResponseDTO'
+            type: array
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/stops.ErrorResponse'
+      summary: Get all stops
+      tags:
+      - stops
+  /api/stops/{id}:
+    get:
+      consumes:
+      - application/json
+      description: Get a stop by its ID
+      parameters:
+      - description: Stop ID
+        in: path
+        name: id
+        required: true
+        type: integer
+      produces:
+      - application/json
+      responses:
+        "200":
+          description: OK
+          schema:
+            $ref: '#/definitions/stops.StopDetailResponseDTO'
+        "400":
+          description: Bad Request
+          schema:
+            $ref: '#/definitions/stops.ErrorResponse'
+        "500":
+          description: Internal Server Error
+          schema:
+            $ref: '#/definitions/stops.ErrorResponse'
+      summary: Get a stop by ID
+      tags:
+      - stops
+swagger: "2.0"
