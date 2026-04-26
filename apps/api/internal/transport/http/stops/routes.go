@@ -2,7 +2,7 @@ package stops
 
 import "github.com/gin-gonic/gin"
 
-func RegisterPublicRoutes(router *gin.RouterGroup, handler *Handler) {
+func RegisterRoutes(router *gin.RouterGroup, handler *Handler) {
 	stops := router.Group("/stops")
 
 	stops.GET("", handler.GetStops)

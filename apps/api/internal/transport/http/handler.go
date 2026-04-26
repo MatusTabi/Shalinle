@@ -11,8 +11,8 @@ func SetupHandler(stopsHandler *stops.Handler, gameHandler *game.Handler) *gin.E
 
 	api := router.Group("/api")
 
-	stops.RegisterPublicRoutes(api, stopsHandler)
-	game.RegisterPublicRoutes(api, gameHandler)
+	stops.RegisterRoutes(api, stopsHandler)
+	game.RegisterRoutes(api, gameHandler)
 
 	return router
 }
