@@ -1,12 +1,10 @@
-import { Link, Outlet } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
+import NavigationBar from './components/navigation/NavigationBar';
 
 function App() {
     return (
         <>
-            <nav className="flex gap-4">
-                <Link to="/">Home</Link>
-            </nav>
-
+            <NavigationBar />
             <Outlet />
         </>
     );
