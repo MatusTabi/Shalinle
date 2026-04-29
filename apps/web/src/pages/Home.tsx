@@ -1,11 +1,11 @@
-import MainStopCard from '../components/card/MainStopCard';
-
-import Map from '../components/Map';
+import MainStopCard from '@/components/card/MainStopCard';
+import SchematicMap from '@/components/map/Map';
 
 export const Home = () => {
     return (
-        <main className="py-10 px-8 flex flex-col gap-8">
-            <div className="absolute top-30 left-10 flex flex-col gap-4">
+        <main className="h-[calc(100vh-64px)]">
+            <SchematicMap />
+            <div className="absolute top-16 left-0 flex flex-col gap-4 background">
                 <MainStopCard
                     title="STARTING STOP"
                     name="Hlavní nádraží"
@@ -17,19 +17,6 @@ export const Home = () => {
                     color="red"
                 />
             </div>
-
-            <Map />
-
-            {/* <StopPoint
-                className="top-100 left-300"
-                name="Hlavni nadrazi"
-                color="lime"
-            />
-            <StopPoint
-                className="top-150 left-100"
-                name="Cílové nádraží"
-                color="red"
-            /> */}
         </main>
     );
 };
