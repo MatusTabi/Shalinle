@@ -61,7 +61,12 @@ function ComboboxInput({
     showClear?: boolean;
 }) {
     return (
-        <InputGroup className={cn('w-1/2', className)}>
+        <InputGroup
+            className={cn(
+                'w-1/2 h-12 border border-gray-600 rounded-sm surface',
+                className,
+            )}
+        >
             <ComboboxPrimitive.Input
                 render={<InputGroupInput disabled={disabled} />}
                 {...props}
