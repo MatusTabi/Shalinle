@@ -1,15 +1,23 @@
-export const exampleData = {
-    nodes: [
-        { id: 'A', name: 'Hlavní nádraží', x: 0, y: 0 },
-        { id: 'B', name: 'Malinovského náměstí', x: 100, y: 0 },
-        { id: 'C', name: 'Moravské náměstí', x: 200, y: 0 },
-        { id: 'D', name: 'Česká', x: 300, y: 0 },
-        { id: 'E', name: 'Šilingrovo náměstí', x: 100, y: 100 },
-    ],
-    links: [
-        { source: 'A', target: 'B', routes: ['1'] },
-        { source: 'B', target: 'C', routes: ['1', '2'] },
-        { source: 'C', target: 'D', routes: ['1'] },
-        { source: 'B', target: 'E', routes: ['2'] },
-    ],
-};
+import type { Link, Node } from '@/components/map/map.types';
+
+export const nodes: Node[] = [
+    { id: 'A', name: 'Tylova', x: 0, y: 0 },
+    { id: 'B', name: 'Semilasso', x: 100, y: 0 },
+    { id: 'C', name: 'Husitská', x: 200, y: 0 },
+    { id: 'D', name: 'Jungmannova', x: 300, y: 0 },
+    { id: 'E', name: 'Šumavská', x: 400, y: 0 },
+    { id: 'G', name: 'Královo pole - nádraží', x: 100, y: -100 },
+];
+
+export const links: Link[] = [
+    { source: 'A', target: 'B', color: 'red' },
+    { source: 'B', target: 'C', color: 'red' },
+    { source: 'C', target: 'D', color: 'red' },
+    { source: 'D', target: 'E', color: 'red' },
+    { source: 'G', target: 'B', color: 'green' },
+    { source: 'B', target: 'C', color: 'green' },
+    { source: 'C', target: 'D', color: 'green' },
+    { source: 'D', target: 'E', color: 'green' },
+];
+
+export const correctPath = ['A', 'B', 'C', 'D', 'E'];
